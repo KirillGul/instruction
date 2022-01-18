@@ -2,7 +2,7 @@
 Openserver:
 zend_extension = xdebug
 
-xdebug.mode                      = debug
+xdebug.mode                      = debug, develop
 xdebug.client_host              = 127.0.0.1
 xdebug.client_port              = 9000
 xdebug.discover_client_host     = true //не обязательно не понятно что
