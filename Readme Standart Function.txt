@@ -1319,9 +1319,40 @@ password_verify - проверить, это хеш этого пароля ил
 ////////////////////////////////////////////////////////////
 Ошибки в PHP:
 ------------
-
 "Notice: undefined variable" - Ошибка undefined variable появляется при попытке обратиться к не существующей (не объявленной ранее) переменной.
 "Notice: undefined index" - появляется при попытке обращения к не существующему элементу массива.
 "Use of undefined constant" - появляется при попытке обращения к не существующей константе.
 "unexpected end of file" -  появляется при наличии синтаксических ошибок в коде.
 "Maximum execution time" - появляется когда скрипт работает дольше, чем разрешено в настройках PHP.
+
+Красивое отображение ошибок:
+1) Xdebug (раскомментировать в php.ini):
+zend_extension = xdebug
+xdebug.mode = debug, develop
+
+2) Whoops:
+https://phpprofi.ru/blogs/post/77
+
+////////////////////////////////////////////////////////////
+SOLID (сокр. от англ. single responsibility, open–closed, Liskov substitution, interface segregation и dependency inversion):
+        S - Принцип единственной ответственности (single responsibility principle)
+        O - Принцип открытости/закрытости (open-closed principle)
+        L - Принцип подстановки Лисков (Liskov substitution principle)
+        I - Принцип разделения интерфейса (interface segregation principle)
+        D - Принцип инверсии зависимостей (dependency inversion principle)
+
+Front Controller (фронт контроллер) - единая точка входа для приложения, грубо говоря это index.php:
+
+Структура папок для проекта:
+----------------------------
+public
+        |- css
+        |- js
+        |- image
+        |- index.php
+                <?php declare(strict_types = 1);
+                require __DIR__ . '/../src/Bootstrap.php'
+src
+        |- Bootstrap.php
+                <?php declare(strict_types = 1);
+                echo 'Hello World!';
