@@ -1,6 +1,10 @@
 ////////////////////////////////////////////////////////////
 База данные (БД или BD):
 ------------------------
+Октрытие консоли для работы в OpenServer: C:\OSPanel\modules\database\MySQL-5.7-x64\bin\mysql.exe -u root
+        Основные команды:
+                SHOW DATABASES; - просмотр всех баз данных
+
 https://dev.mysql.com/doc/refman/8.0/en/
 https://office-menu.ru/uroki-sql
 https://www.sql-ex.ru/site_rules.php
