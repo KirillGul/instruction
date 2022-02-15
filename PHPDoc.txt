@@ -1,0 +1,85 @@
+Все публичные атрибуты класса, должны иметь комментарий с описанием типа;
+Все публичные методы так же должны иметь описание того, что они делают, и описание каждого параметра, включая то что они возвращают.
+
+Doc-блоки скрипта должны быть выделены таким образом:
+    Одной строкой:
+        /** <...> */
+    Либо несколькими строками:
+        /**
+        * <...>
+        */
+
+Общий пример:
+    /**
+    * Краткое описание
+    *
+    * Подробное описание
+    * которое возможно в несколько строк
+    *
+    * @тег значение
+    */
+
+Теги:
+-----
+https://www.phpdoc.org/
+https://htmlweb.ru/php/php_phpdoc.php
+https://elisdn.ru/blog/80/some-reasons-to-learn-phpdoc
+https://habr.com/ru/post/162535/
+https://habr.com/ru/sandbox/22836/
+
+@return - что будет возвращать
+    /**
+    * Этот метод возвращает объект класса EventData
+    * @return EventData или @return User|null
+    */
+
+    /** Возвращаем массив элементов EventHandler
+	* @return EventHandler[]
+	*/
+
+    class UsersController extends Controller
+    {
+        /**
+        * @param integer $id
+        * @return User
+        * @throws NotFoundHttpException
+        */
+        protected function findModel($id)
+        {
+            if (($model = User::findOne($id)) !== null) {
+                return $model;
+            } else {
+                throw new NotFoundHttpException('The requested page does not exist.');
+            }
+        }
+    }
+
+@property – аналогичен тегу @method. Позволяет классу знать какие можно использовать магические свойства.
+    /**
+    * @property integer $id
+    * @property integer $user_id
+    * @property integer $category_id
+    * @property integer $created_at
+    * @property integer $updated_at
+    * @property string $title
+    * @property string $content
+    * @property integer $status
+    */
+    class Post extends ActiveRecord
+    {
+        public static function tableName() {
+            return '{{%post}}';
+        }
+    }
+
+@var - указывает описание для свойств класса (внутри класса)
+    Здесь мы аннотации @var передаём только тип. Но вообще ей можно передавать имя переменной, её тип или оба аргумента сразу.
+    class PasswordChangeForm extends Model
+    {
+        /**
+        * @var User
+        */
+        private $_user;
+    }
+
+
