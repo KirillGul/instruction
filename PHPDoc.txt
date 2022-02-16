@@ -82,4 +82,5 @@ https://habr.com/ru/sandbox/22836/
         private $_user;
     }
 
-
+@param - тип может быть любой: тип PHP, имя класса, или mixed
+    @param Тип $переменная Описание
