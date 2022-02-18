@@ -22,6 +22,7 @@ Doc-блоки скрипта должны быть выделены таким 
 Теги:
 -----
 https://www.phpdoc.org/
+http://omurashov.ru/docblock-in-php-documentation/
 https://htmlweb.ru/php/php_phpdoc.php
 https://elisdn.ru/blog/80/some-reasons-to-learn-phpdoc
 https://habr.com/ru/post/162535/
@@ -72,7 +73,7 @@ https://habr.com/ru/sandbox/22836/
         }
     }
 
-@var - указывает описание для свойств класса (внутри класса)
+@var - указывает описание для свойств класса (внутри класса). Указывает тип свойства класса
     Здесь мы аннотации @var передаём только тип. Но вообще ей можно передавать имя переменной, её тип или оба аргумента сразу.
     class PasswordChangeForm extends Model
     {
@@ -84,3 +85,4 @@ https://habr.com/ru/sandbox/22836/
 
 @param - тип может быть любой: тип PHP, имя класса, или mixed
     @param Тип $переменная Описание
+    Дескриптор описывает входные параметры для функций и методов классов. Содержит информацию и типе данных параметра и его описание.
