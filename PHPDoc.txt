@@ -1,0 +1,115 @@
+Все публичные атрибуты класса, должны иметь комментарий с описанием типа;
+Все публичные методы так же должны иметь описание того, что они делают, и описание каждого параметра, включая то что они возвращают.
+
+Doc-блоки скрипта должны быть выделены таким образом:
+    Одной строкой:
+        /** <...> */
+    Либо несколькими строками:
+        /**
+        * <...>
+        */
+
+Общий пример:
+    /**
+    * Краткое описание
+    *
+    * Подробное описание
+    * которое возможно в несколько строк
+    *
+    * @тег значение
+    */
+
+Теги:
+-----
+https://docs.phpdoc.org/3.0/guide/references/phpdoc/tags/index.html#tag-reference
+https://www.phpdoc.org/
+http://omurashov.ru/docblock-in-php-documentation/
+https://github.com/php-fig/fig-standards/blob/master/proposed/phpdoc-tags.md#510-param
+https://htmlweb.ru/php/php_phpdoc.php
+https://elisdn.ru/blog/80/some-reasons-to-learn-phpdoc
+https://habr.com/ru/post/162535/
+https://habr.com/ru/sandbox/22836/
+
+========================================================================
+Class Or Interface:
+------------------
+    @package Пример: @package Zend_Pdf /Указание имени пакета, в который входит данный программный код (файл). 
+                                    Используется в заголовочном блоке файла или в блоке комментариев класса.
+
+========================================================================
+Function Or Method:
+------------------
+    @param Пример: @param Тип $переменная Описание /Применяется для описания передаваемых свойств функций или метода
+
+    @return Пример: @return datatype1|datatype2 Описание /Используется для описания данных, возвращаемых функцией или методом класса. 
+                                                        Синаксис схож с дискриптором @param. Если в качестве типа будет указано имя класса, 
+                                                        phpDocumentor автоматически создаст ссылку на данный класс. 
+    
+    @throws Пример: @throws InvalidArgumentException if the provided argument is not of type 'array'.
+
+    Пример:
+        class UsersController extends Controller
+        {
+            /**
+            * @param integer $id
+            * @return User
+            * @throws NotFoundHttpException
+            */
+            protected function findModel($id)
+            {
+                if (($model = User::findOne($id)) !== null) {
+                    return $model;
+                } else {
+                    throw new NotFoundHttpException('The requested page does not exist.');
+                }
+            }
+        }
+
+========================================================================
+Constant Or Property:
+--------------------
+    @var Пример: @var string /Указывает тип структурных элементов или свойства класса, внутри класса
+        @var ["Type"] [element_name] [<description>]
+
+    Пример:
+    1)
+        /** @var int $int This is a counter. */
+        $int = 0;
+    2)
+        class PasswordChangeForm extends Model
+        {
+            /**
+            * @var User
+            */
+            private $_user;
+        }
+
+========================================================================
+Other:
+-----
+@method - Пример: @method returntype описание /Используется для описания магического метода __call().
+
+@property
+@property-read
+@property-write – Дескрипторы описывают свойства класса, которые могут быть записаны или прочитаны с помощью магических методов __set() и __get(). 
+                Если свойство доступно для чтения и записи, необходимо использовать директиву @property. 
+                Если только для чтения или только для записи, то @property-read или @property-write соответственно. 
+                Используются только в блоке описания класса.
+
+    Пример:
+        /**
+        * @property integer $id
+        * @property integer $user_id
+        * @property integer $category_id
+        * @property integer $created_at
+        * @property integer $updated_at
+        * @property string $title
+        * @property string $content
+        * @property integer $status
+        */
+        class Post extends ActiveRecord
+        {
+            public static function tableName() {
+                return '{{%post}}';
+            }
+        }

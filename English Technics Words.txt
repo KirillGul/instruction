@@ -1,0 +1,26 @@
+Слова - Words:
+select - выбор
+distinct - особый, отдельный
+from - из, от
+order - порядок, сортировка
+by - по, на, при
+TRUE - истина
+FALSE - ложь
+UNKNOWN - неизвестно
+IS NULL - отсутствие значения
+EXISTS - существование
+UNIQUE - уникальность
+MATCH - совпадение
+bootstrap - начальная загрузка
+tiny - крошечный
+attachment - вложение
+Fail fast! - провалиться быстро
+Forgive! - Простить
+Undefined - неопределенный
+request - запрос
+response - ответ
+exec - исполнитель
+Accept - принимать, допускать
+closure - замыкание
+Event - Событие
+depends- зависит от
