@@ -91,5 +91,18 @@ git branch -d имя_ветки
 	co = checkout
 
 
-Копирование репозитория:
+Копирование репозитория (для подключения в другом месте):
 git clone https://github.com/{путь и название}.git
+
+echo "# Test" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/KirillGul/Test.git
+git push -u origin main
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/KirillGul/Test.git
+git branch -M main
+git push -u origin main
