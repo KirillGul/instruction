@@ -39,6 +39,8 @@ git reset --hard HEAD^1 - вернуться на один commit назад с 
 git reset --soft HEAD^1 - вернуться на один commit назад с помощью "мягкого" сброса 
                         (т.е. коммит уйдет но изменения в файле остануться, переход в статус после команды git add перед commit)
 -------------------------
+git remote - список названий удаленных репозиториев, которые были добавлены
+git remote -v - можно просмотреть, какие адреса в добавленных удаленных репозиториях используются для чтения и записи
 git remote add origin https://github.com/...... - добавление удаленного репозитория
 git remote rm origin - удаление удаленного репозитория "origin"
 
@@ -93,6 +95,9 @@ git branch -d имя_ветки
 
 Копирование репозитория (для подключения в другом месте):
 git clone https://github.com/{путь и название}.git
+
+
+https://selectel.ru/blog/tutorials/git-remote-add-origin-or-how-to-work-with-remote-repositories/
 
 echo "# Test" >> README.md
 git init
