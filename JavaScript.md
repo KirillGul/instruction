@@ -2017,7 +2017,7 @@ User.staticMethod(); // true
 * Статические свойства также возможны, они выглядят как свойства класса, но с `static` в начале:
 	```javascript
 	class Article {
-	static publisher = "Илья Кантор";
+		static publisher = "Илья Кантор";
 	}
 
 	alert( Article.publisher ); // Илья Кантор
