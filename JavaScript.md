@@ -4174,6 +4174,18 @@ elem.getBoundingClientRect()
 Любая точка на странице имеет координаты:  
 * Относительно окна браузера – `elem.getBoundingClientRect()` с `position:fixed`
 * Относительно документа – `elem.getBoundingClientRect()` + 'текущая прокрутка страницы `window.pageXOffset/pageYOffset`' с `position:absolute`
+	```javascript
+	function getCoords(elem) {
+		let box = elem.getBoundingClientRect();
+
+		return {
+			top: box.top + window.pageYOffset,
+			right: box.right + window.pageXOffset,
+			bottom: box.bottom + window.pageYOffset,
+			left: box.left + window.pageXOffset
+		};
+	}
+	```
 
 1. Координаты в контексте окна подходят для использования с `position:fixed`, а координаты относительно документа – для использования с `position:absolute`.
 1. Каждая из систем координат имеет свои преимущества и недостатки. Иногда будет лучше применить одну, а иногда – другую, как это и происходит с позиционированием в CSS, где мы выбираем между `absolute` и `fixed`.
